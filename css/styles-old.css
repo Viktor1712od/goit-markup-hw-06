@@ -461,8 +461,9 @@ img {
 .container-footer {
     display: flex;
     align-items: baseline;
-
-
+max-width: auto;
+padding-left: 15px;
+padding-right: 15px;
 }
 
 .footer-container {
@@ -473,7 +474,7 @@ img {
 
 
 
-.footer-logo .logo-part {
+.footer-logo .logo-type {
     color: #f4f4fd;
     display: inline-block;
     margin-bottom: 16px;
