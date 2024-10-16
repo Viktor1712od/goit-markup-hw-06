@@ -65,6 +65,10 @@ button {
   margin: 0 auto;
 }
 
+.contacts {
+  display: none;
+}
+
 
 @media screen and (min-width: 768px) {
   .container {
@@ -78,7 +82,7 @@ button {
     padding: 0 15px;
     margin-left: auto;
     margin-right: auto;
-    /* align-items: center; */
+
   }
 }
 
@@ -95,10 +99,6 @@ button {
 }
 
 .nav-list {
-  display: none;
-}
-
-.contacts {
   display: none;
 }
 
@@ -242,7 +242,7 @@ button {
   }
 }
 
-/* <Mobile menu> */
+/* #region mobile menu */
 
 
 .mobile-menu {
@@ -274,8 +274,7 @@ button {
   display: flex;
   flex-direction: column;
   height: 100%;
-  /* justify-content: flex-start;
-  align-items: flex-start; */
+
 }
 
 .mobile-menu-close {
@@ -292,7 +291,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  stroke-width: 1px;
+  /* stroke-width: 1px; */
   padding: 0;
   cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -359,7 +358,7 @@ button {
   justify-content: flex-start;
   flex-direction: column;
   gap: 24px;
-  margin-bottom: 68px;
+  margin-bottom: 48px;
 
 
 }
@@ -381,8 +380,10 @@ button {
 
 .mobile-networks-list {
   display: flex;
+  align-items: flex-start;
   gap: 40px;
   margin-top: 48px;
+  flex-direction: row;
   justify-content: center;
 }
 
@@ -439,7 +440,7 @@ button {
 }
 
 .container {
-  /* align-items: center; */
+  /* align-items: ; */
 }
 
 
@@ -662,6 +663,8 @@ button {
   }
 }
 
+/* #region team */
+
 .section-team {
   background-color: #f4f4fd;
   padding-top: 96px;
@@ -779,15 +782,16 @@ button {
   }
 }
 
-/* <--#endregion team--> */
+/* #endregion team */
 
-/* <--#region portfolio--> */
+/* #region portfolio */
 
 .portfolio-section {
-  background-color: #ffff;
+  /* background-color: #ffff; */
   padding-top: 96px;
-  padding-bottom: 87px;
+  padding-bottom: 96px;
 }
+
 
 .portfolio-title {
   font-weight: 700;
@@ -798,6 +802,7 @@ button {
   text-transform: capitalize;
   color: #2e2f42;
   margin-bottom: 72px;
+  flex-wrap: nowrap;
 }
 
 .portfolio-list {
@@ -810,6 +815,8 @@ button {
 
 .portfolio-item {
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background: #FFFFFF;
+  /* flex-shrink: 0; */
 }
 
 .portfolio-item-title {
@@ -819,37 +826,40 @@ button {
   letter-spacing: 0.02em;
   color: #2e2f42;
   margin-bottom: 8px;
+  align-items: center;
 }
 
 .portfolio-item-text {
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 400px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
 }
-
 
 .portfolio-item:hover {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-item:hover .portfolio-text {
-  transform: translate(0);
+  transform: translateY(0%);
   box-shadow: 0px 1px 6px 0px rgba(46, 47, 66, 0.08), 0px 1px 1px 0px rgba(46, 47, 66, 0.16), 0px 2px 1px 0px rgba(46, 47, 66, 0.08);
 }
 
 .container-img {
   position: relative;
   overflow: hidden;
+  padding: 0;
+  margin: 0;
+
 }
 
 .portfolio-text {
   position: absolute;
   top: 0;
   background: #4d5ae5;
-  width: 288px;
-  height: 280px;
+  width: 100%;
+  height: 100%;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
@@ -866,18 +876,48 @@ button {
   border-top: none;
 }
 
+.portfolio-img {
+  height: auto;
+  object-fit: cover;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
 @media screen and (min-width: 768px) {
   .portfolio-section {
-    padding-top: 96px;
-    padding-bottom: 96px;
+    /* padding-top: 96px;
+    padding-bottom: 96px; */
+    width: 767px;
+    margin: 0 auto;
+
+  }
+
+  .portfolio-container {
+    max-width: 768px;
+    padding: 0 15px;
+  }
+
+  .portfolio-title {
+    display: flex;
+    justify-content: center;
   }
 
   .portfolio-list {
     gap: 72px 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .portfolio-item {
     width: calc((100% - 24px) / 2);
+    flex-shrink: 0;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .portfolio-text {
@@ -890,15 +930,26 @@ button {
   .portfolio-section {
     padding-top: 120px;
     padding-bottom: 120px;
+    width: 1157px;
+  }
+
+  .portfolio-container {
+    max-width: 1158px;
   }
 
   .portfolio-list {
-    gap: 48px 24px;
+    /* gap: 48px 24px; */
+    justify-content: space-between;
+    column-gap: 24px;
+    row-gap: 48px;
   }
 
   .portfolio-item {
     width: calc((100% - 48px) / 3);
+    flex-shrink: 0;
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
+
 
   .portfolio-text {
     width: 360px;
@@ -906,9 +957,9 @@ button {
   }
 }
 
-/* <--#endregion portfolio--> */
+/* #endregion portfolio */
 
-/* <--#region footer--> */
+/* #region footer */
 
 .footer {
   min-width: 320px;
@@ -1001,13 +1052,13 @@ button {
   padding: 0;
 }
 
-.social-links-list-footer:hover,
+/* .social-links-list-footer:hover,
 .social-links-list-footer:focus {
   background-color: #31d0aa;
-}
+} */
 
 .footer-link {
-  padding: 12px;
+  /* padding: 12px; */
   display: flex;
   border-radius: 50%;
   background-color: #4d5ae5;
@@ -1017,6 +1068,7 @@ button {
   align-items: center;
   transition: background-color 300ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 
 
 .footer-link:hover,
@@ -1233,12 +1285,9 @@ button {
     /* margin-right: 120px; */
   }
 
-  .footer-container {
-    /* margin-right: 120px; */
-    /* margin-bottom: 0; */
-
+  .icon-team-footer {
+    fill: #f4f4fd;
   }
-
 
   .form-subscribe {
     /* margin-left: auto; */
@@ -1250,9 +1299,9 @@ button {
   }
 }
 
-/* <--#endregion footer--> */
+/* #endregion footer */
 
-/* @media screen and (min-width: 320px) { */
+
 .backdrop {
   display: flex;
   justify-content: center;
@@ -1260,7 +1309,7 @@ button {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 99999;
+  z-index: 9999;
   width: 100%;
   height: 100%;
   background-color: rgba(46, 47, 66, 0.4);
@@ -1276,8 +1325,8 @@ button {
   top: 50%;
   left: 50%;
   border-radius: 4px;
-  overflow-y: hidden;
-  min-width: 288px;
+  overflow-y: auto;
+  max-width: 288px;
   min-height: 623px;
   transform: translate(-50%, -50%);
   background-color: #fcfcfc;
@@ -1368,7 +1417,7 @@ button {
 
 .modal-input {
   display: block;
-  width: 100%;
+  width: 360px;
   height: 40px;
   padding-top: 8px;
   padding-bottom: 8px;
@@ -1381,10 +1430,7 @@ button {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-
-
 .modal-box {
-
   display: flex;
   position: relative;
 }
